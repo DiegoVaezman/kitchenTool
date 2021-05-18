@@ -1,8 +1,7 @@
-# <h1>**LabTool**</h1>
-![Esquema de relaciones](my-app/public/img/LabTool_logo.png)
+# <h1>**KitchenTool**</h1>
+![Esquema de relaciones](my-app/public/img/kitchenTool_mobileLogo.png)
 
-LabTool es una single-page App de gestión de pedidos principalmente en el ámbito de trabajo de un laboratorio aunque bien podría usarse en otro ámbito en el que se requiera un control de las solicitudes de compras, validación de pedidos y control de stock.
-LabTool es el proyecto final que he elegido desarrollar correspondiente al bootcamp Let's Coder 2021.
+Adaptación de la App LabTool para la gestión de compras en el supermercado.
 <br>
 <br>
 **Puedes acceder a la aplicación a través de este enlace [LabTool development](https://labtooldevelopment.herokuapp.com/)**
