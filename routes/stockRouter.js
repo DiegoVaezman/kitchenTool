@@ -133,7 +133,7 @@ router.put("/reduce/:id", protectedRoute, (req, res) => {
                         const order = new Order({
                             product : item.product,
                             amount : item.automaticamount,
-                            user : "6053a5cf6c15b8560c74af9a",
+                            user : "60a3ace26253a16ee859b703",
                             status : "waiting",
                             date : Date.now()
                         })
@@ -142,7 +142,7 @@ router.put("/reduce/:id", protectedRoute, (req, res) => {
                             //crea un comentario asociado al pedido automático
                             const comment = new Comment({
                                 text : "Order authomaticaly requested",
-                                owner : "6053a5cf6c15b8560c74af9a",
+                                owner : "60a3ace26253a16ee859b703",
                                 order : doc._id,
                                 date : Date.now()
                             })

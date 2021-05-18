@@ -38,7 +38,8 @@ router.post("/newproduct", protectedRoute, (req, res) => {
 
         Product.find().sort({catalog_number:-1}).limit(1)
         .then(element => {
-            if (element){
+            if (element.length > 0){
+                console.log(element)
                 console.log(element[0].catalog_number)
                 catalog_number = element[0].catalog_number + 1
             }
