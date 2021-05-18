@@ -7,19 +7,14 @@ Adaptación de la App LabTool para la gestión de compras en el supermercado.
 
 ## **Adaptación**
 
-```
-Se han adapatado los tipos de productos en la base de datos al ámbito de productos de supermercado.
-```
+
+- Se han adapatado los tipos de productos en la base de datos al ámbito de productos de supermercado.
 <br>
 
-```
-Al agregar productos a la base de datos se debe seleccionar el tipo de producto según la lista desplegable de tipos en vez de asignarse por defecto "añadidos".
-```
+- Al agregar productos a la base de datos se debe seleccionar el tipo de producto según la lista desplegable de tipos en vez de asignarse por defecto "añadidos".
 <br>
 
-```
-Se ha añadido búsqueda de productos en el Stock disponible del hogar y filtrado del stock según el estado ("In stock" / "Out of stock") y "actualmente solicitados".
-```
+- Se ha añadido búsqueda de productos en el Stock disponible del hogar y filtrado del stock según el estado ("In stock" / "Out of stock") y "actualmente solicitados".
 <br>
 <br>
 <br>
