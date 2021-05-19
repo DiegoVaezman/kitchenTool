@@ -105,11 +105,11 @@ function ProductSection(props){
         document.getElementById("select").value = "Type"
         closeSearchModal()
     }
-    const searchByCatN = (event) => {
+    const searchByTHouse = (event) => {
         event.preventDefault();
-        const catN = String(inputValue.bycatn);
-        setDataFiltered(data.filter(product => String(product.catalog_number).includes(catN)));
-        document.getElementById("select").value = "Type"
+        const tHouse = inputValue.byTHouse;
+        setDataFiltered(data.filter(item => item.trading_house.toLowerCase().includes(tHouse)));
+        document.getElementById("select").value = "Type";
         closeSearchModal()
     }
     const searchByRefN = (event) => {
@@ -121,9 +121,12 @@ function ProductSection(props){
     }
     const searchByType = (event) => {
         const type = event.target.value;
+        console.log(type)
         if (type === "All") {
+            console.log("todos")
             setDataFiltered(data)
         } else {
+            console.log("else")
             setDataFiltered(data.filter(product => product.type === type))
         }
     }
@@ -159,9 +162,9 @@ function ProductSection(props){
     return (
         <div className="gridSection grid">
             <div className="filter">
-                <select id="select" name="bytype" onClick={searchByType}>
+                <select id="select" name="bytype" onChange={searchByType}>
                     <option >Type</option>
-                    <option defaultValue="All">Todos</option>
+                    <option value="All">Todos</option>
                     <option value="bebidas">Bebidas</option>
                     <option value="harinas">Harinas</option>
                     <option value="frutasyverduras">Frutas y Verduras</option>
@@ -188,33 +191,26 @@ function ProductSection(props){
             </div>
             <button className="button1 addProductBtn" onClick={openAddModal}>Add new product</button>
             <Modal ref={searchModalRef}>
-                    <div className="modalHead">
-                        <h1>Advanced search</h1>
-                        <button className="closeButton"onClick={closeSearchModal}><b>X</b></button>
+                <div className="modalHead">
+                    <h1>Advanced search</h1>
+                    <button className="closeButton"onClick={closeSearchModal}><b>X</b></button>
+                </div>
+                <form className="form modalForm modalFormSearch">
+                    <div className="searchModalInput">
+                        <div>
+                            <label htmlFor="byname">Search by product name</label>
+                            <input type="text" name="byname" placeholder="Product name" onChange={handletTypeInputChange} />
+                        </div>
+                        <button className="button1" onClick={searchByName}>Search</button>
                     </div>
-                        <form className="form modalForm modalFormSearch">
-                            <div className="searchModalInput">
-                                <div>
-                                    <label htmlFor="byname">Search by product name</label>
-                                    <input type="text" name="byname" placeholder="Product name" onChange={handletTypeInputChange}/>
-                                </div>
-                                <button className="button1" onClick={searchByName}>Search</button>
-                            </div>
-                            <div className="searchModalInput">
-                                <div>
-                                    <label htmlFor="bycatn">Search by catalog number </label>
-                                    <input type="text" name="bycatn" placeholder="Catalog number" onChange={handletTypeInputChange}/>
-                                </div>
-                                <button className="button1" onClick={searchByCatN}>Search</button>
-                            </div>
-                            <div className="searchModalInput">
-                                <div>
-                                    <label htmlFor="byrefn">Search by reference number </label>
-                                    <input type="text" name="byrefn" placeholder="Reference number" onChange={handletTypeInputChange}/>
-                                </div>
-                                <button className="button1" onClick={searchByRefN}>Search</button>
-                            </div>
-                        </form>
+                    <div className="searchModalInput">
+                        <div>
+                            <label htmlFor="byTHouse">Search by Trading House</label>
+                            <input type="text" name="byTHouse" placeholder="House" onChange={handletTypeInputChange} />
+                        </div>
+                        <button className="button1" onClick={searchByTHouse}>Search</button>
+                    </div>
+                </form>
             </Modal>
             <Modal ref={addModalRef}>
                 <div className="modal">

@@ -22,7 +22,7 @@ function StockSection(props) {
     const closeSearchModal = () => {
         setInputValue({
             byname: "",
-            byStatus: ""
+            byStatus: "Out of stock"
         })
         searchModalRef.current.closeModal()
     };
@@ -61,7 +61,7 @@ function StockSection(props) {
     //FILTRANDO LA DATA
     const [inputValue, setInputValue] = useState({
         byname: "",
-        byStatus: ""
+        byStatus: "Out of stock"
     })
     const handletTypeInputChange = (event) => {
         setInputValue({
@@ -73,18 +73,20 @@ function StockSection(props) {
         event.preventDefault();
         const name = inputValue.byname;
         setDataFiltered(data.filter(item => item.product.name.toLowerCase().includes(name)));
+        document.getElementById("select").value = "Type";
         closeSearchModal()
     }
     const searchByStatus = (event) => {
         event.preventDefault();
         const status = inputValue.byStatus;
-        console.log(status)
         setDataFiltered(data.filter(item => item.status === status));
+        document.getElementById("select").value = "Type";
         closeSearchModal()
     }
-    const searchByRefN = (event) => {
+    const searchByOrdered = (event) => {
         event.preventDefault();
         setDataFiltered(data.filter(item => item.request === true));
+        document.getElementById("select").value = "Type";
         closeSearchModal()
     }
     const searchByType = (event) => {
@@ -101,7 +103,7 @@ function StockSection(props) {
             <div className="filter">
                 <select id="select" name="bytype" onClick={searchByType}>
                     <option >Type</option>
-                    <option defaultValue="All">Todos</option>
+                    <option value="All">Todos</option>
                     <option value="bebidas">Bebidas</option>
                     <option value="harinas">Harinas</option>
                     <option value="frutasyverduras">Frutas y Verduras</option>
@@ -146,8 +148,8 @@ function StockSection(props) {
                     <div className="searchModalInput">
                         <div>
                             <label htmlFor="byStatus">Stock status</label>
-                            <select name="byStatus" style={{width:"100%"}} onClick={handletTypeInputChange}>
-                                <option defaultValue="Out of stock">Out of stock</option>
+                            <select name="byStatus" style={{width:"100%"}} onChange={handletTypeInputChange}>
+                                <option value="Out of stock">Out of stock</option>
                                 <option value="In stock">In stock</option>
                             </select>
                         </div>
@@ -156,11 +158,11 @@ function StockSection(props) {
                     <div className="searchModalInput">
                         <div>
                             <label htmlFor="byOrdered">Order status</label>
-                            <select name="byOrdered" style={{width:"100%"}} onClick={searchByType}>
+                            <select name="byOrdered" style={{width:"100%"}} onChange={searchByType}>
                                 <option>Currently ordered</option>
                             </select>
                         </div>
-                        <button className="button1" onClick={searchByRefN}>Search</button>
+                        <button className="button1" onClick={searchByOrdered}>Search</button>
                     </div>
                 </form>
             </Modal>

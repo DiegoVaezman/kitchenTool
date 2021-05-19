@@ -119,7 +119,7 @@ router.put("/reduce/:id", protectedRoute, (req, res) => {
                 if (item.control === true && amount <= item.limit) {
 
                     //comprueba que no hay pedido automático para este producto
-                    Order.findOne({ $and: [{user:"6053a5cf6c15b8560c74af9a"}, {status : { $in: ["validated", "waiting"]} }, {product:item.product}] }, function (err, orderfound) {
+                    Order.findOne({ $and: [{user:"60a3ace26253a16ee859b703"}, {status : { $in: ["validated", "waiting"]} }, {product:item.product}] }, function (err, orderfound) {
                         if (err) throw err;
                         if (orderfound) {
                             return res.status(200).send({ msg:"Amount reduced"})
