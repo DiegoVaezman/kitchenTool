@@ -112,18 +112,17 @@ function ProductSection(props){
         document.getElementById("select").value = "Type";
         closeSearchModal()
     }
-    const searchByRefN = (event) => {
-        event.preventDefault();
-        const refN = inputValue.byrefn;
-        setDataFiltered(data.filter(product => product.reference_number.toLowerCase().includes(refN)));
-        document.getElementById("select").value = "Type"
-        closeSearchModal()
-    }
+    // const searchByRefN = (event) => {
+    //     event.preventDefault();
+    //     const refN = inputValue.byrefn;
+    //     setDataFiltered(data.filter(product => product.reference_number.toLowerCase().includes(refN)));
+    //     document.getElementById("select").value = "Type"
+    //     closeSearchModal()
+    // }
     const searchByType = (event) => {
         const type = event.target.value;
         console.log(type)
         if (type === "All") {
-            console.log("todos")
             setDataFiltered(data)
         } else {
             console.log("else")

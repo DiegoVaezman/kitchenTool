@@ -14,6 +14,9 @@ Adaptación de la App LabTool para la gestión de compras en el supermercado.
 - Al agregar productos a la base de datos se debe seleccionar el tipo de producto según la lista desplegable de tipos en vez de asignarse por defecto "añadidos".
 <br>
 
+- La búsqueda avanzada de productos en la base de datos se puede realizar mediante nombre o casa comercial.
+<br>
+
 - Se ha añadido búsqueda de productos en el Stock disponible del hogar y filtrado del stock según el estado ("In stock" / "Out of stock") y "actualmente solicitados".
 <br>
 <br>

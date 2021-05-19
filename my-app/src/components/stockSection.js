@@ -101,7 +101,7 @@ function StockSection(props) {
     return (
         <div className="gridSection grid">
             <div className="filter">
-                <select id="select" name="bytype" onClick={searchByType}>
+                <select id="select" name="bytype" onChange={searchByType}>
                     <option >Type</option>
                     <option value="All">Todos</option>
                     <option value="bebidas">Bebidas</option>
